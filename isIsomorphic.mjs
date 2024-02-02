@@ -24,9 +24,10 @@ var isIsomorphic = function (s, t) {
       }
     }
   }
+  console.log(obj1, obj2)
 
   console.log(obj1);
   return true;
 };
 
-console.log(isIsomorphic("badc", "baba"));
+console.log(isIsomorphic("egg", "add"));
