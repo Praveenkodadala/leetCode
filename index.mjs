@@ -1,19 +1,16 @@
-// let a = "15698742";
+function Animal() {}
 
-// let convertNumber = (x) => {
-//   let a = x.split('');
+Animal.prototype.speak = function () {
+  return this;
+};
 
-//   for (let i = a.length - 1; i >= 0; i--) {
-//     if ((a.length - i) % 3 === 0 && i !== 0) {
-//       a.splice(i, 0, ',');
-//     }
-//   }
+Animal.eat = function () {
+  return this;
+};
 
-//   return a.join('');
-// };
+const obj = new Animal();
+const speak = obj.speak;
+console.log(speak()); // global object (in non–strict mode)
 
-// console.log(convertNumber(a));
-
-console.log(2+"2")
-console.log(typeof (2+"2"+2))
-console.log(typeof (NaN+"2"))
+const eat = Animal.eat;
+console.log(eat()); // global object (in non-strict mode)
