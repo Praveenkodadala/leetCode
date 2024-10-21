@@ -19,9 +19,10 @@ var gcdOfStrings = function (str1, str2) {
     }
   
   console.log("result", result)
+  return result
   
   
   };
-  console.log(gcdOfStrings("ABCDEF", "ABC"));
+  console.log(gcdOfStrings("sosas", "sosa"));
   
   

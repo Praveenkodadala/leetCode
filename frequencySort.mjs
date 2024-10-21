@@ -12,6 +12,7 @@ So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid ans
  * @return {string}
  */
 
+/*
 var frequencySort = function (s) {
   console.log("S", s);
   let map = new Map();
@@ -20,8 +21,9 @@ var frequencySort = function (s) {
   }
   console.log(map)
  let tempArr = Array.from(map);
+ console.log("tempArr", tempArr)
 tempArr.sort((a, b) => b[1] - a[1]);
-console.log(tempArr)
+console.log("tempArr here", tempArr)
 let result = "";
 for (let [char, freq] of tempArr) {
     for (let i = 0; i < freq; i++) {
@@ -34,3 +36,24 @@ for (let [char, freq] of tempArr) {
 };
 
 console.log(frequencySort("cccaaa"));
+*/
+
+var frequencySort = function (s) {
+	let sMap = new Map();
+
+	for (let char of s) {
+		sMap.set(char, (sMap.get(char) || 0) + 1);
+	}
+
+	let sortedByValue = new Map([...sMap.entries()].sort((x, y) => y[1] - x[1]));
+
+	let result = "";
+
+	for (let [key, value] of sortedByValue) {
+		result += key.repeat(value);
+	}
+
+	return result;
+};
+
+console.log(frequencySort("treeeeewwwwgssddd"));
